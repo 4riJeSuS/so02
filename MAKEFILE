@@ -1,0 +1,28 @@
+CC = gcc
+CFLAGS =-Wall
+
+OBJS = main.o jogo.o pipes.OBJS
+
+all: 4emlinha
+
+4emlinha: $(OBJS)
+	$(CC) $(CFLAGS) -o 4emlinha $(OBJS)
+
+main.o: main.c jogo.h
+	$(CC) $(CFLAGS) -c main.c
+jogo.o: jogo.c jogo.h
+	$(CC) $(CFLAGS) -c jogo.c
+
+pipes.o: pipes.c jogo.h
+	$(CC) $(CFLAGS) -c pipes.c
+clean:
+	rm -f *.o 4emlinha
+	rm -f *~
+	rm -f core
+	rm -f *.core
+	rm -f *.bak
+	rm -f *.orig
+	rm -f *.swp
+	rm -f *.swo
+	rm -f *.swn
+	rm -f *~
