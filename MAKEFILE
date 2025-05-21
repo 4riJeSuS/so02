@@ -1,28 +1,25 @@
+# Makefile para o jogo 4 em linha
+
 CC = gcc
-CFLAGS =-Wall
+CFLAGS = -Wall -c
+LIBS =
+OBJS = main.o jogo.o pipes.o
 
-OBJS = main.o jogo.o pipes.OBJS
-
+# Alvo por defeito
 all: 4emlinha
 
+main.o: main.c 4line.h
+	$(CC) $(CFLAGS) -o main.o main.c
+
+jogo.o: jogo.c 4line.h
+	$(CC) $(CFLAGS) -o jogo.o jogo.c
+
+pipes.o: pipes.c 4line.h
+	$(CC) $(CFLAGS) -o pipes.o pipes.c
+
 4emlinha: $(OBJS)
-	$(CC) $(CFLAGS) -o 4emlinha $(OBJS)
+	$(CC) -o 4emlinha $(OBJS) $(LIBS)
 
-main.o: main.c jogo.h
-	$(CC) $(CFLAGS) -c main.c
-jogo.o: jogo.c jogo.h
-	$(CC) $(CFLAGS) -c jogo.c
-
-pipes.o: pipes.c jogo.h
-	$(CC) $(CFLAGS) -c pipes.c
 clean:
-	rm -f *.o 4emlinha
-	rm -f *~
-	rm -f core
-	rm -f *.core
-	rm -f *.bak
-	rm -f *.orig
-	rm -f *.swp
-	rm -f *.swo
-	rm -f *.swn
-	rm -f *~
+	rm -f 4emlinha *.o *~
+	echo "Removidos ficheiros executáveis, objetos e temporários."
