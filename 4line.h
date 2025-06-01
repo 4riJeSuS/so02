@@ -17,6 +17,7 @@ void mudar_jogador();
 int jogo_terminado();
 char obter_vencedor();
 
+
 // Funções para IPC (Pipes)
 void criar_fifo();
 void escrever_fifo(char *mensagem);
