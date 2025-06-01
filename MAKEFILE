@@ -6,7 +6,7 @@ LIBS =
 OBJS = main.o jogo.o pipes.o
 
 # Alvo por defeito
-all: 4emlinha
+all: 4emlinha main.c jogo.c pipes.c
 
 main.o: main.c 4line.h
 	$(CC) $(CFLAGS) -o main.o main.c
