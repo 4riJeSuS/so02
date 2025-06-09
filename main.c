@@ -1,26 +1,4 @@
 #include <stdio.h>
-#include "4line.h"
-
-int main()
-{
-    inicializar_tabuleiro();
-
-    while (!jogo_terminado())
-    {
-        mostrar_tabuleiro();
-        fazer_jogada();
-        mudar_jogador();
-    }
-
-    mostrar_tabuleiro();
-    printf("Jogo terminado - Vencedor: %c\n", obter_vencedor());
-
-    limpar_recursos();
-    return 0;
-}
-
-/*
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "4line.h"
@@ -74,4 +52,3 @@ int main(int argc, char *argv[]) {
     limpar_recursos();
     return 0;
 }
-*/

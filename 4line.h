@@ -4,9 +4,10 @@
 // Constantes do jogo
 #define LINHAS 6
 #define COLUNAS 7
-
 // Constantes de comunicação (pipes)
 #define FIFO_PATH "/tmp/fifo" // podes ajustar conforme necessário
+
+extern char jogador_atual;
 
 // Funções do jogo
 void inicializar_tabuleiro();
