@@ -30,7 +30,7 @@ void mostrar_tabuleiro()
         printf("|\n");
     }
     printf("---------------\n");
-    printf(" 1 2 3 4 5 6 7 \n");
+    printf(" 0 1 2 3 4 5 6 \n");
 }
 
 //faz a jogfada do jogador atual, pedindo a coluna onde ele quer jogar
