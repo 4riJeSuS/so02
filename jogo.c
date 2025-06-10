@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "4line.h"
 
+//variaveis globais
 char tabuleiro[LINHAS][COLUNAS];
 char jogador_atual = 'X';
 
+// enche o tabuleiro com espaços vazios o que mostra todas as posicoes vazias
 void inicializar_tabuleiro()
 {
     for (int i = 0; i < LINHAS; i++)
@@ -15,6 +17,8 @@ void inicializar_tabuleiro()
     }
 }
 
+
+//imprime o tabuleiro atual no terminal que faz as linhas e colunas'
 void mostrar_tabuleiro()
 {
     for (int i = 0; i < LINHAS; i++)
@@ -29,6 +33,7 @@ void mostrar_tabuleiro()
     printf(" 1 2 3 4 5 6 7 \n");
 }
 
+//faz a jogfada do jogador atual, pedindo a coluna onde ele quer jogar
 void fazer_jogada()
 {
     int coluna;
@@ -61,6 +66,8 @@ void fazer_jogada()
     }
 }
 
+
+//poe a jogada do jogador atual no tabuleiro, se a coluna for valida 
 int aplicar_jogada(int coluna)
 {
     if (coluna < 0 || coluna >= COLUNAS)
