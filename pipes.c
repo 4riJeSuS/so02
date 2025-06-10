@@ -4,13 +4,20 @@
 #include <sys/stat.h>
 #include <string.h>
 #include <unistd.h>
+#include <errno.h>
 #include "4line.h"
 
 // permite a comunicaçãi entre os processos do jogo -> jogador 1 e jogador 2
 void criar_fifo()
 {
     if (mkfifo(FIFO_PATH, 0666) == -1)
-        perror("ERRO: cirar FIFO");
+    {
+        if (errno != EEXIST)
+        {
+            perror("ERRO: criar FIFO");
+            exit(1); 
+        }
+    }
 }
 
 // abre a FIFO para escrita e envia a mensagem
@@ -41,14 +48,8 @@ void ler_fifo(char *buffer, int tamanho)
     close(fd);
 }
 
-// remove a FIFO do sistema de arquivos
-void limpar()
-{
-    unlink(FIFO_PATH);
-}
-
 // limpa os recursos do jogo, removendo a FIFO
 void limpar_recursos()
 {
-    limpar();
+    unlink(FIFO_PATH);
 }
