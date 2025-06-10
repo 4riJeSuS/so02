@@ -26,7 +26,7 @@ void mostrar_tabuleiro()
         printf("|\n");
     }
     printf("---------------\n");
-    printf(" 0 1 2 3 4 5 6\n");
+    printf(" 1 2 3 4 5 6 7 \n");
 }
 
 void fazer_jogada()
